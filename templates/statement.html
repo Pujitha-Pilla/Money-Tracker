@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+	Statement
+{% endblock %}
+{% block main %}
+	<div id="statement">
+		<table class="table table-stripped">
+			<thead>
+				<th scope='col'> Reason </th>
+				<th scope="col"> Type </th>
+				<th scope="col"> Amount </th>
+			</thead>
+			<tbody>
+				{% for record in records %}
+					<tr>
+						<td>
+							{{record.reason}}
+						</td>
+						<td>
+							{% if 'C' == record.type %}
+								{{"Credit"}}
+							{% else %}
+								{{"Debit"}}
+							{% endif %}
+						</td>
+						<td>
+							{{record.amount}}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+			
+			<tfoot>
+				<th scope="col">Total</th>
+				<th scope="col"></th>
+				<th scope="col">{{balance}}</th>
+			</tfoot>
+		</table>
+	</div>
+{% endblock %}

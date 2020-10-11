@@ -1,0 +1,52 @@
+body{
+	background-color: lavender;
+}
+
+ .container{
+	width: 300px;
+	height: 300px;
+
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	
+	margin:auto;
+}
+
+
+.home{
+	width: 500px;
+	height: 300px;
+
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	
+	margin:auto;
+}
+
+
+
+.summary{
+	padding: 10px 10px;
+	margin: 5px 5px;
+	border: 1px;
+	border-color: aqua;
+	
+}
+
+#statement{
+	margin:10px 0;
+	text-align: center;
+}
+
+.alert {
+	background-color: rgb(245, 59, 59);
+	font-size: 14px;
+	padding: 3px;
+	text-align: center;
+}

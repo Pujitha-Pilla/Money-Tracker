@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}
+	Add Transaction
+{% endblock %}
+{% block main %}
+
+<div class="container">
+	
+	<form id="transaction" method ="POST">
+		<div class="form-group">
+			<input type = "text" class="form-control" name = "about" id ="about" placeholder="Reason" required/>
+		</div>
+		<div class="form-group">
+			<input type = "decimal" class="form-control" name = "amount" id = "amount" placeholder="Amount" required/>
+		</div>
+		<div class="form-group">
+				<input type="hidden" name="">
+		</div>
+		<button class="btn btn-primary" type = "submit" name = "credit" onclick="check(this.name)">Credit</button>
+		<button class="btn btn-primary" type ="submit" name = "debit" onclick="check(this.name)">Debit</button>
+	</form>
+</div>
+	<script type="text/javascript"> 
+		function check(clicked){
+			var reason = document.getElementById("about").value;
+			var amount = document.getElementById("amount").value;
+			if(reason != "" && amount != "")
+			{
+				var action;
+				if(clicked == "credit"){
+					action = "/credit";
+				}
+				else{
+					action = "/debit";
+				}
+				document.getElementById("transaction").action = action;
+				document.getElementById("transaction").submit();
+			}
+		}
+	</script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Register
+{% endblock %}
+
+{% block main %}
+
+{% for message in get_flashed_messages() %}
+ <div class="alert">{{message}}</div>
+{% endfor %}
+
+<div class="container">
+	<form action = "/register" method="POST">
+		<div class="form-group">
+			<h1 class="h3 mb-3 font-weight-normal"> Fill the details </h1>
+		</div>
+		<div class="form-group">
+			<input type="text" id="username" name="username" class = "form-control" placeholder="Username" required>
+		</div>
+		<div class="form-group">
+			<input type="email" name="inputEmail" id="email-address" class="form-control" placeholder="Email Address" required autofocus>
+		</div>
+		<div class="form-group">
+			<input type="password" name="password"id="password" class="form-control" placeholder="Password" required>
+		</div>
+		<div class="form-group">
+			<input type="password" id="confirm-password" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+		</div>
+
+		<button class="btn btn-primary btn-block" type="submit">Register</button>
+
+	</form>
+</div>
+{% endblock %}
